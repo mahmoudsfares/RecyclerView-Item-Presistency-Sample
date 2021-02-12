@@ -78,5 +78,7 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleView
             mItemClickListener.onItemClickListener(getAdapterPosition());
         }
     }
+
+    public boolean[] getCheckStatus() { return checkStatus; }
 }
 
