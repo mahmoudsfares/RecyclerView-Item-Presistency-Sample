@@ -48,12 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView rv = findViewById(R.id.recyclerview);
         Button btn = findViewById(R.id.button);
-        SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), new SimpleAdapter.ItemClickListener() {
-            @Override
-            public void onItemClickListener(int clickedPosition) {
-                Toast.makeText(MainActivity.this, ""+clickedPosition, Toast.LENGTH_SHORT).show();
-            }
-        });
+        SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(),
+                clickedPosition -> Toast.makeText(MainActivity.this, ""+clickedPosition, Toast.LENGTH_SHORT).show());
         LinearLayoutManager manager = new LinearLayoutManager(this);
 
         adapter.setAdapterData(things);
