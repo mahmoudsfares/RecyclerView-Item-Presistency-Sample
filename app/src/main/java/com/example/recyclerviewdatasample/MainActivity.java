@@ -3,10 +3,12 @@ package com.example.recyclerviewdatasample;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView rv = findViewById(R.id.recyclerview);
         Button btn = findViewById(R.id.button);
         SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(),
-                clickedPosition -> Toast.makeText(MainActivity.this, ""+clickedPosition, Toast.LENGTH_SHORT).show());
+                clickedPosition -> Toast.makeText(MainActivity.this, "" + clickedPosition, Toast.LENGTH_SHORT).show());
         LinearLayoutManager manager = new LinearLayoutManager(this);
 
         adapter.setAdapterData(things);
@@ -59,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(v -> {
             boolean[] checkStatus = adapter.getCheckStatus();
             int i = 0;
-           for(boolean c:checkStatus){
-               if(c)
-               Log.w("item no ", ""+i);
-               i++;
-           }
+            for (boolean c : checkStatus) {
+                if (c)
+                    Log.w("item no ", "" + i);
+                i++;
+            }
         });
     }
 }

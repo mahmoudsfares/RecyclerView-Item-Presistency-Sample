@@ -27,7 +27,6 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleView
     public void setAdapterData(List<String> things) {
         this.things = things;
         checkStatus = new boolean[things.size()];
-        notifyDataSetChanged();
     }
 
     // create list item by inflating its layout
